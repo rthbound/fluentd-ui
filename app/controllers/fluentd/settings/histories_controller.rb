@@ -10,6 +10,9 @@ class Fluentd::Settings::HistoriesController < ApplicationController
   end
 
   def show
+    @current = @fluentd.agent.config
+    target = @backup_file.content
+    @sdiff = Diff::LCS.sdiff(@current.split("\n").map(&:rstrip), target.split("\n").map(&:rstrip))
   end
 
   def reuse

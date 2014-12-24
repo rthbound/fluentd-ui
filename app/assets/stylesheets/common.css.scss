@@ -165,3 +165,12 @@ label {
     color: #999;
   }
 }
+
+.diff {
+  .deleted {
+    background-color: #fdd;
+  }
+  .added {
+    background-color: #dfd;
+  }
+}
